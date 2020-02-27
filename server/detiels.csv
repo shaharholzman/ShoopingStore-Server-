@@ -1,0 +1,142 @@
+# create database store
+
+# create table users (
+id int auto_increment,
+personal_id int (255) not null,
+first_name varchar (255) not null,
+Last_Name varchar (255) not null,
+userName varchar (255) not null,
+password varchar (255) not null,
+city varchar (255) not null,
+street varchar (255) not null,
+idAdmin bool default false,
+primary key(id)
+)
+
+# INSERT INTO Users (personal_id,first_name,last_name,userName,password,city,street,idAdmin)
+  VALUES('892144332','shahar','holzman','admin','$2a$10$7KcAUjwaExAwEZf/ISb2Mem4FEmMT5n3GfuT.10B1KqAMyqcy6yu.','Tel-Aviv','Shtriker',true)
+
+# create table categories (
+    id int auto_increment,
+    name varchar (255) not null,
+    primary key(id)
+)
+
+INSERT INTO categories (name)
+VALUES
+('Veg'),
+('Nuts'),
+('Cooking'),
+('Sweets'),
+('Fruits'),
+('drinks')
+
+
+# create table products (
+    id int auto_increment,
+    name varchar (255) not null,
+    categories_id int not null,
+    price int not null,
+    img varchar (255) not null,
+    primary key(id),
+    FOREIGN KEY (categories_id) REFERENCES categories(id)
+)
+
+# INSERT INTO products (name,categories_id,price,img)
+VALUES
+('beet - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_small/EOP18_S_P_900162_1.png'),
+('Banana 1 kg',5,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_small/WDS38_S_P_964775_1.png'),
+('Waffle - 125 g',4,5,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/FBM56_M_P_7296073230953_1.png'),
+('Kenzie apple - 1 kg',5,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_small/TYF28_S_P_963280_1.png'),
+('Tometo - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_small/VWW04_S_P_22_1.png'),
+('sweet potato - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_small/MHM40_S_P_96889_1.png'),
+('lettuce - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/VTE44_L_P_7290013090157_1.png'),
+('Rise-Free Gluten 100 g',3,5,'https://images-na.ssl-images-amazon.com/images/I/51%2BlVGxHK3L._SY355_.jpg'),
+('mint - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/WGR44_L_P_7290013090508_1.png'),
+('Green onion - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_small/WBS50_S_P_7290013090379_1.png'),
+('parsley - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/WGY42_L_P_7290013090515_1.png'),
+('Carrot - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_small/QUW32_S_P_99941_1.png'),
+('Lemon - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_small/VSV34_S_P_964492_1.png'),
+('Dry red onion - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_small/AMV10_S_P_1036_1.png'),
+('Cucumber - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_small/ATU10_S_P_46_1.png'),
+('Red gamba - 1 kg',1,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_small/CMN10_S_P_91_1.png'),
+('Stortini pasta - 100 g',3,5,'https://www.nizat.com/ProductsImages/thumbs/D435586_2310201811186_240_180.jpg'),
+('Tamar Palm Noor 200 g',2,10,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/69c4866e3f6d01056c568d618d19fa31.jpg'),
+('Organic chocolate - 100 g',4,8,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/WSV62_M_P_7296073295624_1.png'),
+('Organic Cracker - 200 g',4,3,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/TUG36_M_P_4033634066001_1.png'),
+('Chickpea - 70 g',4,2,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/ILM58_M_P_764218652665_1.png'),
+('Gluten-free popcorn - 60 g',4,3,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/RNM60_M_P_7296073327257_1.png'),
+('Oak cracker snack - 110 g',4,2,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/SRG40_M_P_4033634030095_1.png'),
+('Organic chocolate - 100 g',4,4,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/SQZ62_M_P_7296073169840_1.png'),
+('Organic chocolate - 100 g',4,4,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/SQZ62_M_P_7296073169840_1.png'),
+('Sugar-free cookies - 200 g',4,5,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/QGZ64_M_P_7296073273684_1.png'),
+('Gluten Free Cookies - 100 g',4,4,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/BVX70_M_P_7296073386964_1.png'),
+('Peanut Butter - 510 g',4,4,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/SDY68_M_P_7296073274957_1.png'),
+('Bar lips - 100 g',4,2,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800918/prod/product_images/products_medium/JXA44_M_P_7290013521545_1.png'),
+('Papaya - 1 kg',5,4,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/XRW38_L_P_965819_1.png'),
+('pear - 1 kg',5,3.5,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/XEX34_L_P_965482_1.png'),
+('Kiwi - 1 kg',5,4,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/GZC32_L_P_901787_1.png'),
+('Strawberries - 100 g',5,1,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/TRG34_L_P_998251_1.png'),
+('Red grapefruit - 1 kg',4,2,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/VPA34_L_P_964393_1.png'),
+('Yellow grapefruit',5,2,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/VOM38_L_P_964379_1.png'),
+('Green grapes - 200 g',5,2,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/YMU56_L_P_7296073367123_1.png'),
+('pineapple - 1 kg',5,5,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/RJX50_L_P_7296073292012_1.png'),
+('Passionflower - 200 g',5,4,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/FTY50_L_P_608614315529_1.png'),
+('Blueberry - 100 g',5,3,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/YGV44_L_P_608614310456_1.png'),
+('Red pear - 1 kg',5,4,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/WEQ44_L_P_964799_1.png'),
+('Pomegranate - 1 kg',5,4,'https://res.cloudinary.com/shufersal/image/upload/f_auto,q_auto/v1551800922/prod/product_images/products_large/YUN36_L_P_966564_1.png'),
+('Sugar-free granola 300 g',3,7,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/7839f955dd3ef69f95a3d9b0d4305ae3.jpg'),
+('Goji Berry 100 g',2,4,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/d0f5c16e5cb862eb4db1f030a24547b7.jpg'),
+('Dried figs 200 g',2,4,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/07d3b9651e0a45facd6a915f0173e6d8.jpg'),
+('dates 1 kg',2,10,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/73dd4a6165752f24ce5cafd33131bd93.jpg'),
+('Macadamia nuts 200 g',2,12,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/2f21d63988b70744a9fb81941930ba86.jpg'),
+('Peeled natural pecan nut 100 g',2,7,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/f19c42a58f740688ec4347cb6d4c45c4.jpg'),
+('Cashew chili 250 g',2,10,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/c2644013673d568cabd2b6780bc6f9c1.jpg'),
+('Natural Almond 200 g',2,4,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/721b6e62903a2db0289646df8cd8dced.jpg'),
+('Brazil nuts 200 g',2,4,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/14c358e32e618b299462706834a57b12.jpg'),
+('Dried Fruit Package',2,20,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/a82fd68ac0ffc9ea2530dd83377f8987.jpg'),
+('Dry cherry 100 g',2,5,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/b91f84eb0fbd9ff74a28edb692ad9f0c.jpg'),
+('dry red wine 250 ml',6,20,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/5fbf75fb28fa1b8a225280a90dc5e821.jpg'),
+('Dry white wine 200 ml',6,14,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/093dbee1b7f01cbe4bc32514d757a3e3.jpg'),
+('Grape juice Natural heredity 200 ml',6,5,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/9af18bb33c4964d21bd854f4bd81d715.jpg'),
+('Natural apple juice 100 ml',6,4,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/b61d4ba6e169cd38eca22425b7eff913.jpg'),
+('Natural pear cider 100 ml',6,4,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/f811f3763ce2fd42755a5551b18fb979.jpg'),
+('Roasted buckwheat 500 g',3,5,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/a896008c1f281540967d3acc21003d37.jpg'),
+('White Rice 1 kg',3,4,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/23c15232a5679724000be66f571103d3.jpg'),
+('Round white rice 1 kg',3,4,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/f99b36c96eb8c02d514a095eb0a88d8a.jpg'),
+('quinoa 200 g',3,5,'https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/cc11b7e86d108169813274e77578423e.jpg')
+
+
+
+# create table cart (
+  id int auto_increment,
+  costomer_id int not null,
+  date date DEFAULT current_timestamp(),
+  PRIMARY KEY (id),
+  FOREIGN KEY (costomer_id) REFERENCES users (id)
+)
+
+#  create table product_cart (
+  id int auto_increment,
+  product_id int not null,
+  amount int not null,
+  total_price int not null,
+  cart_id int not null,
+  PRIMARY KEY (id),
+  FOREIGN KEY (product_id) REFERENCES products (id),
+  FOREIGN KEY (cart_id) REFERENCES cart (id)
+) 
+
+
+# create table Orders(
+id int auto_increment,
+user_id int not null,
+total_price int not null,
+city varchar(255) not null,
+street varchar(255) not null,
+OrderDate date default now(),
+DeliveryDate date not null,
+credit int not null,
+primary key(id),
+FOREIGN KEY (user_id) references Users (id)
+)
