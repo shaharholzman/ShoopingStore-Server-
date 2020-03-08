@@ -40,6 +40,12 @@ router.get('/verify',(req,res)=>{
 
 })
 
+//LogOut & Refrash Token
+ router.get('/LogOut',(req,res)=>{
+     req.session.TK = 'none'
+    res.send(200)
+ }) 
+
 // Register_A
 router.post('/register_A',(req,res)=>{
     const {personal_id,userName} = req.body
